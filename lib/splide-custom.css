@@ -1,0 +1,149 @@
+/* 轮播容器的样式，包括边框和阴影 */
+.splide {
+    border: 2px solid var(--carousel-border-color);
+    /* 边框颜色和宽度 */
+    box-shadow: 0px 4px 8px var(--carousel-shadow-color);
+    /* 阴影 */
+    border-radius: var(--carousel-border-radius);
+    /* 圆角 */
+}
+
+/* 确保图片的显示与适配 */
+.splide__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* 确保图片全部显示且占满组件 */
+}
+
+.carousel-container {
+    visibility: inherit;
+    margin-top: 20px;
+    /* 调整与上方元素的距离 */
+    margin-bottom: 20px;
+    /* 调整与下方元素的距离 */
+}
+
+/* 图片简介的样式 */
+.carousel-caption {
+    height: 2em;
+    /* 设置固定高度 */
+    line-height: 2em;
+    /* 设置行高，让文字垂直居中 */
+    text-align: center;
+    font-size: 0.9em;
+    font-style: italic;
+    padding: 6px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 左右切换按钮设置 */
+.splide__arrow {
+    background: transparent;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    height: 5em;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5em;
+    z-index: 10;
+}
+
+/* 禁用状态的箭头按钮 */
+.splide__arrow:disabled {
+    opacity: 0;
+}
+
+/* 左右箭头按钮的定位 */
+.splide__arrow--prev {
+    left: 0;
+}
+
+.splide__arrow--next {
+    right: 0;
+}
+
+/* 箭头图标的样式 */
+.splide__arrow svg {
+    fill: var(--carousel-arrow-color);
+    /* 动态设置箭头颜色 */
+    height: 2.5em;
+    transition: fill 0.2s linear;
+    width: 2.5em;
+}
+
+.splide__arrow:hover:not(:disabled) svg {
+    fill: var(--carousel-arrow-hover-color);
+    /* 悬停时的箭头颜色 */
+}
+
+/* 隐藏难看的选中边框 */
+.splide__arrow:focus-visible {
+    outline: transparent;
+    outline-offset: 0;
+}
+
+.splide.is-focus-in .splide__arrow:focus {
+    outline: transparent;
+    outline-offset: 0;
+}
+
+.splide__pagination__page:focus-visible {
+    outline: transparent;
+    outline-offset: 0;
+}
+
+.splide.is-focus-in .splide__pagination__page:focus {
+    outline: transparent;
+    outline-offset: 0;
+}
+
+/* 分页按钮样式 */
+.splide__pagination {
+    bottom: 1em;
+    left: 0;
+    padding: 0 1em;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+
+/* 分页按钮外观 */
+.splide__pagination__page {
+    background: var(--carousel-pagination-color);
+    border: 0;
+    border-radius: 2.5px;
+    display: inline-block;
+    height: 5px;
+    margin: 3px;
+    width: 20px;
+    transition: background-color 0.2s linear;
+}
+
+.splide__pagination__page.is-active {
+    background: var(--carousel-pagination-active-color);
+}
+
+.splide__pagination__page:hover {
+    background: var(--carousel-pagination-hover-color);
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+/* 在放大时按比例缩放，配合 JS 进行调整 */
+.zoomable {
+    object-fit: contain;
+    /* 缩放时按比例显示 */
+}
+
+/* Zooming 时调整图片的最大尺寸，但不影响宽高比例 */
+.zooming {
+    max-width: 90vw !important;
+    max-height: 90vh !important;
+    object-fit: contain !important;
+}
