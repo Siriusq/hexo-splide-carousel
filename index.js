@@ -4,13 +4,13 @@ const path = require('path');
 // 注册 Hexo 自定义标签
 hexo.extend.tag.register(
   "splide",
-  require('./lib/splide-html-generate')(hexo),
+  require('./lib/scripts/tags/splide-tag')(hexo),
   { ends: true },
 );
 
 // 加载 lib 中的文件
-const splideInit = fs.readFileSync(path.resolve(__dirname, "./lib/splide-init.js"), { encoding: "utf8" });
-const customStyle = fs.readFileSync(path.resolve(__dirname, "./lib/splide-custom.css"), { encoding: "utf8" });
+const splideInit = fs.readFileSync(path.resolve(__dirname, "./lib/scripts/splide-init.js"), { encoding: "utf8" });
+const customStyle = fs.readFileSync(path.resolve(__dirname, "./lib/assets/splide-custom.css"), { encoding: "utf8" });
 
 // 读取 Hexo _config.yml 中的配置
 const splideStyles = hexo.config.splide.styles || {};
