@@ -8,11 +8,17 @@ hexo.extend.tag.register(
   { ends: true },
 );
 
+// 加载 lib 中的文件
 const splideInit = fs.readFileSync(path.resolve(__dirname, "./lib/splide-init.js"), { encoding: "utf8" });
 const customStyle = fs.readFileSync(path.resolve(__dirname, "./lib/splide-custom.css"), { encoding: "utf8" });
+
+// 读取 Hexo _config.yml 中的配置
 const splideStyles = hexo.config.splide.styles || {};
-const darkMode = hexo.config.splide['dark-mode'] || 'auto';
+const darkMode = hexo.config.splide['dark_mode'] || 'auto';
+const mediumZoomEnabled = hexo.config.splide.enable_medium_zoom || false;
 const cdn = hexo.config.splide.cdn || 'unpkg';
+
+// CDN 切换
 let splideJsUrl, splideCssUrl, mediumZoomJsUrl;
 switch (cdn) {
   case 'jsdelivr':
@@ -33,22 +39,35 @@ switch (cdn) {
     break;
 }
 
-//注入相关js
+// 注入 Splide.js，设置全局变量
 hexo.extend.injector.register(
   'body_end', // 注入到 body 标签结束前
   () => {
     return `
       <script src="${splideJsUrl}"></script>
-      <script src="${mediumZoomJsUrl}"></script>
       <script>
         window.splideStyles = ${JSON.stringify(splideStyles)};
         window.splideDarkMode = '${darkMode}';
+        window.mediumZoomEnabled = ${mediumZoomEnabled};
       </script>
       <script type="text/javascript">${splideInit}</script>      
     `;
   },
   'default'
 );
+
+// 若启用则注入 medium-zoom.js
+if (mediumZoomEnabled) {
+  hexo.extend.injector.register(
+    'body_end', // 注入到 body 标签结束前
+    () => {
+      return `
+        <script src="${mediumZoomJsUrl}"></script>   
+      `;
+    },
+    'default'
+  );
+}
 
 // 注入自定义样式
 hexo.extend.injector.register(
