@@ -25,35 +25,35 @@ A package for **Hexo** blogs using the **NexT** theme, provides image carousel a
     npm install hexo-splide-carousel
     ```
 2. Add the following configuration options to your Hexo `_config.yml` file:
-    ```yaml
-    # Image carousel and zoom
-    splide:
-        cdn: unpkg  # Options: unpkg, cdnjs, jsdelivr
-        options:
-            heightRatio: 0.618        # Aspect ratio
-            lazyLoad: 'nearby'        # Lazy loading, options: false, 'nearby', 'sequential'
-            type: 'slide'             # Type, options: 'loop', 'slide'
-            autoplay: false           # Autoplay
-            interval: 3000            # Autoplay interval in milliseconds
-            pauseOnHover: true        # Pause autoplay when hovering
+   ```yaml
+   # Image carousel and zoom
+   splide:
+     cdn: unpkg  # Options: unpkg, cdnjs, jsdelivr
+     options:
+       heightRatio: 0.618        # Aspect ratio
+       lazyLoad: 'nearby'        # Lazy loading, options: false,
+       type: 'slide'             # Type, options: 'loop', 'slide'
+       autoplay: false           # Autoplay
+       interval: 3000            # Autoplay interval in milliseconds
+       pauseOnHover: true        # Pause autoplay when hovering
 
-        styles:
-            arrowColor: '#fc8d5d'             # Arrow color for navigation buttons
-            arrowHoverColor: '#fc6423'        # Arrow color on hover
-            paginationColor: '#fc8d5d'        # Pagination button color when inactive
-            paginationActiveColor: '#fc6423'  # Pagination button color when active
-            paginationHoverColor: '#fc6423'   # Pagination button color on hover
-            borderRadius: 1px                 # Border radius
-            borderColor:
-            light: "#eee"  # Border color for light theme
-            dark: "#444"   # Border color for dark theme
-            shadowColor:
-            light: "rgba(0, 0, 0, 0.1)"  # Shadow color for light theme
-            dark: "rgba(0, 0, 0, 0.3)"   # Shadow color for dark theme
+     styles:
+       arrowColor: '#fc8d5d'             # Arrow color for navigation buttons
+       arrowHoverColor: '#fc6423'        # Arrow color on hover
+       paginationColor: '#fc8d5d'        # Pagination button color when inactive
+       paginationActiveColor: '#fc6423'  # Pagination button color when active
+       paginationHoverColor: '#fc6423'   # Pagination button color on hover
+       borderRadius: 1px                 # Border radius
+       borderColor:
+         light: "#eee"  # Border color for light theme
+         dark: "#444"   # Border color for dark theme
+       shadowColor:
+         light: "rgba(0, 0, 0, 0.1)"  # Shadow color for light theme
+         dark: "rgba(0, 0, 0, 0.3)"   # Shadow color for dark theme
 
-        dark_mode: auto  # Dark mode, options: auto, true, false. auto will follow the theme of the browser.
-        enable_medium_zoom: true  # Enable medium zoom, do not enable together with the theme's medium zoom option
-    ```
+     dark_mode: auto  # Dark mode, options: auto, true, false. auto will follow the theme of the browser.
+     enable_medium_zoom: true  # Enable medium zoom, do not enable together with the theme's medium zoom option
+   ```
 
 ## Usage
 To create image carousels using **Splide.js**, wrap your images inside the `{% splide %}` tags, e.g.:

@@ -21,39 +21,39 @@
 
 ## 安装
 1. 通过 npm 安装：
-    ```bash
-    npm install hexo-splide-carousel
-    ```
+   ```bash
+   npm install hexo-splide-carousel
+   ```
 2. 在博客根目录下的 Hexo 配置文件 `_config.yml` 中添加以下配置选项：
-    ```yaml
-    # 图片轮播缩放
-    splide:
-        cdn: unpkg  # 可选项：unpkg, cdnjs, jsdelivr
-        options:
-            heightRatio: 0.618        #宽高比
-            lazyLoad: 'nearby'        #懒加载，可选项：false, 'nearby', 'sequential'
-            type: 'slide'             #类型，可选项：'loop', 'slide'
-            autoplay: false           #自动播放
-            interval: 3000            #自动播放时间间隔
-            pauseOnHover: true        #鼠标悬停时暂停自动播放
+   ```yaml
+   # 图片轮播缩放
+   splide:
+     cdn: unpkg  # 可选项：unpkg, cdnjs, jsdelivr
+     options:
+       heightRatio: 0.618        # 宽高比
+       lazyLoad: 'nearby'        # 懒加载，可选项：false, 'nearby', 'sequential'
+       type: 'slide'             # 类型，可选项：'loop', 'slide'
+       autoplay: false           # 自动播放
+       interval: 3000            # 自动播放时间间隔
+       pauseOnHover: true        # 鼠标悬停时暂停自动播放
 
-        styles:
-            arrowColor: '#fc8d5d'             # 左右切换箭头颜色
-            arrowHoverColor: '#fc6423'        # 悬停时的左右切换箭头颜色
-            paginationColor: '#fc8d5d'        # 非激活状态下的分页按钮颜色
-            paginationActiveColor: '#fc6423'  # 激活状态下的分页按钮颜色
-            paginationHoverColor: '#fc6423'   # 悬停时的分页按钮颜色
-            borderRadius: 1px                 # 边框圆角半径
-            borderColor:
-            light: "#eee"  # 亮色主题边框颜色
-            dark: "#444"   # 深色主题边框颜色
-            shadowColor:
-            light: "rgba(0, 0, 0, 0.1)"  # 亮色主题阴影颜色
-            dark: "rgba(0, 0, 0, 0.3)"   # 深色主题阴影颜色
+     styles:
+       arrowColor: '#fc8d5d'             # 左右切换箭头颜色
+       arrowHoverColor: '#fc6423'        # 悬停时的左右切换箭头颜色
+       paginationColor: '#fc8d5d'        # 非激活状态下的分页按钮颜色
+       paginationActiveColor: '#fc6423'  # 激活状态下的分页按钮颜色
+       paginationHoverColor: '#fc6423'   # 悬停时的分页按钮颜色
+       borderRadius: 1px                 # 边框圆角半径
+       borderColor:
+         light: "#eee"  # 亮色主题边框颜色
+         dark: "#444"   # 深色主题边框颜色
+       shadowColor:
+         light: "rgba(0, 0, 0, 0.1)"  # 亮色主题阴影颜色
+         dark: "rgba(0, 0, 0, 0.3)"   # 深色主题阴影颜色
 
-        dark_mode: auto  # 深色模式，可选项：true, false, auto. auto 模式会根据浏览器主题自动设置
-        enable_medium_zoom: true  # 是否启用 medium zoom，请不要与主题中的 medium zoom 同时启用
-    ```
+     dark_mode: auto  # 深色模式，可选项：true, false, auto. auto 模式会根据浏览器主题自动设置
+     enable_medium_zoom: true  # 是否启用 medium zoom，请不要与主题中的 medium zoom 同时启用
+   ```
 
 ## 使用
 要创建图片轮播，请将图片包裹在 `{% splide %}` 标签中，例如：
