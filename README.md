@@ -2,10 +2,8 @@
 <p align="center">
     <a href="https://github.com/Siriusq/hexo-splide-carousel/blob/master/ReadmeAssets/CNREADME.md"><img src="https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87_CN_README-4285F4?style=for-the-badge&logo=googletranslate&logoColor=ffffff"/></a>
     <a href="https://siriusq.top/en/splide-demo.html"><img src="https://img.shields.io/badge/Live%20Demo-%23fac03d?style=for-the-badge&logo=github&logoColor=%23222222"/></a>
-    <a href="https://github.com/Siriusq/hexo-splide-carousel/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-%23e3eb98?style=for-the-badge
-    "/></a>
-    <a href="https://hexo.io/"><img src="https://img.shields.io/badge/HEXO-7.3.0-%230E83CD?style=for-the-badge&logo=hexo
-    "/></a>
+    <a href="https://github.com/Siriusq/hexo-splide-carousel/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-%23e3eb98?style=for-the-badge"/></a>
+    <a href="https://hexo.io/"><img src="https://img.shields.io/badge/HEXO-7.3.0-%230E83CD?style=for-the-badge&logo=hexo"/></a>
     <a href="https://www.npmjs.com/"><img src="https://img.shields.io/badge/NPM-10.8.2-%23CB3837?style=for-the-badge&logo=npm&logoColor=%23CB3837"/></a>
 </p>
 
