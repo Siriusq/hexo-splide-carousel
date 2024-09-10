@@ -40,7 +40,7 @@ A package for **Hexo** blogs using the **NexT** theme, provides image carousel a
         light: "rgba(0, 0, 0, 0.1)"  # Shadow color for light theme
         dark: "rgba(0, 0, 0, 0.3)"   # Shadow color for dark theme
 
-    dark_mode: auto  # Dark mode, options: auto, true, false
+    dark_mode: auto  # Dark mode, options: auto, true, false. auto will follow the theme of the browser.
     enable_medium_zoom: true  # Enable medium zoom, do not enable together with the theme's medium zoom option
     ```
 

@@ -14,7 +14,7 @@ const customStyle = fs.readFileSync(path.resolve(__dirname, "./lib/assets/splide
 
 // 读取 Hexo _config.yml 中的配置
 const splideStyles = hexo.config.splide.styles || {};
-const darkMode = hexo.config.splide['dark_mode'] || 'auto';
+const darkMode = hexo.config.splide['dark_mode'];
 const mediumZoomEnabled = hexo.config.splide.enable_medium_zoom || false;
 const cdn = hexo.config.splide.cdn || 'unpkg';
 
