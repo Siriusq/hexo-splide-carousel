@@ -1,5 +1,15 @@
 # hexo-splide-carousel
-<a href="./CNREADME.md"><img src="https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87_CN_README-4285F4?style=for-the-badge&logo=googletranslate&logoColor=ffffff"/></a>
+<p align="center">
+    <a href="https://github.com/Siriusq/hexo-splide-carousel/blob/master/ReadmeAssets/CNREADME.md"><img src="https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87_CN_README-4285F4?style=for-the-badge&logo=googletranslate&logoColor=ffffff"/></a>
+    <a href="https://siriusq.top/en/splide-demo.html"><img src="https://img.shields.io/badge/Live%20Demo-%23fac03d?style=for-the-badge&logo=github&logoColor=%23222222"/></a>
+    <a href="https://github.com/Siriusq/hexo-splide-carousel/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-%23e3eb98?style=for-the-badge
+    "/></a>
+    <a href="https://hexo.io/"><img src="https://img.shields.io/badge/HEXO-7.3.0-%230E83CD?style=for-the-badge&logo=hexo
+    "/></a>
+    <a href="https://www.npmjs.com/"><img src="https://img.shields.io/badge/NPM-10.8.2-%23CB3837?style=for-the-badge&logo=npm&logoColor=%23CB3837"/></a>
+</p>
+
+![](./ReadmeAssets/preview.jpg)
 
 A package for **Hexo** blogs using the **NexT** theme, provides image carousel and zoom functionality using **Splide.js** and **medium-zoom** libraries.
 
@@ -85,6 +95,7 @@ To create image carousels using **Splide.js**, wrap your images inside the `{% s
 - When medium-zoom is enabled, there is a chance that some images may not zoom correctly. For more details, see [images in a row with hardcoded height, look bad when zoomed in #147](https://github.com/francoischalifour/medium-zoom/issues/147).
 - Currently, the carousel component’s dark and light themes are adjusted based on the browser’s theme settings. It does not support some themes' built-in light/dark toggle features, as each theme handles dark mode differently, making it impossible to accommodate every theme.
 - The NexT and Butterfly themes have been tested and work as expected. Other themes are not guaranteed to function properly. Additionally, due to my limited front-end knowledge, the carousel component is fully compatible only with the NexT theme.
+- Images smaller than the carousel container will be enlarged to fill the carousel container.
 
 ## License
 This project is licensed under the MIT License.

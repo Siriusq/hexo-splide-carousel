@@ -1,5 +1,16 @@
 # hexo-splide-carousel
- <a href="../README.md"><img src="https://img.shields.io/badge/ENGLISH_README-4285F4?style=for-the-badge&logo=googletranslate&logoColor=ffffff"/></a>
+<p align="center">
+    <a href="https://github.com/Siriusq/hexo-splide-carousel/blob/master/README.md"><img src="https://img.shields.io/badge/ENGLISH_README-4285F4?style=for-the-badge&logo=googletranslate&logoColor=ffffff"/></a>
+    <a href="https://siriusq.top/splide-demo.html"><img src="https://img.shields.io/badge/Live%20Demo-%23fac03d?style=for-the-badge&logo=github&logoColor=%23222222"/></a>
+    <a href="https://github.com/Siriusq/hexo-splide-carousel/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-%23e3eb98?style=for-the-badge
+    "/></a>
+    <a href="https://hexo.io/"><img src="https://img.shields.io/badge/HEXO-7.3.0-%230E83CD?style=for-the-badge&logo=hexo
+    "/></a>
+    <a href="https://www.npmjs.com/"><img src="https://img.shields.io/badge/NPM-10.8.2-%23CB3837?style=for-the-badge&logo=npm&logoColor=%23CB3837"/></a>
+</p>
+
+
+![](./preview.jpg)
 
 一个为 **Hexo** 博客提供的包，通过 **Splide.js** 和 **medium-zoom** 库提供图片轮播和图片缩放功能，适配 **NexT** 主题。
 
@@ -85,6 +96,7 @@ splide:
 - 启用 medium-zoom 时，有概率导致某些图片无法被正确放大。详情见 [images in a row with hardcoded height, look bad when zoomed in #147](https://github.com/francoischalifour/medium-zoom/issues/147)。
 - 目前轮播组件的深色模式是根据浏览器的明暗主题调整的，不支持一些主题自带的明暗主题切换功能，因为每个主题对深色模式的处理方式不同，不可能为每个主题都做适配。
 - 目前已经测试过 NexT 主题和 Butterfly 主题，可以正常使用，其他主题不保证能够正常使用。另外，碍于本人有限的前端知识，轮播组件只对 NexT 主题有完整适配。
+- 尺寸小于轮播窗口的图片将会被放大至填满轮播窗口。
 
 ## 许可证
 本项目采用 MIT 许可证。
