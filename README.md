@@ -1,12 +1,15 @@
 # hexo-splide-carousel
+<a href="./CNREADME.md"><img src="https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87_CN_README-4285F4?style=for-the-badge&logo=googletranslate&logoColor=ffffff"/></a>
+
 A package for **Hexo** blogs using the **NexT** theme, provides image carousel and zoom functionality using **Splide.js** and **medium-zoom** libraries.
 
 ## Features
-- Integrates **Splide.js** to create responsive, customizable image carousels.
-- Provides **medium-zoom** functionality for zooming images with a smooth and clean effect.
-- Provides a variety of custom style options, support theme light and dark settings.
+- Integrates [Splide.js](https://splidejs.com/) to create responsive, customizable image carousels.
+- Provides [medium-zoom](https://medium-zoom.francoischalifour.com/) functionality for zooming images with a smooth and clean effect.
+- Provides a variety of custom style options, support dark mode settings.
 - More splide options can be added to the configuration file, but they are not guaranteed to work properly.
-- Compatible with NexT's lazy loading and pjax functions.
+- Compatible with theme NexT's lazyload and pjax functions.
+- Since the carousel component occupies a fixed height upon initialization, there's no need to worry about inaccurate scrolling positions when clicking the table of contents after enabling the theme's lazy loading.
 
 ## Installation
 1. Install the package via npm:
@@ -17,31 +20,31 @@ A package for **Hexo** blogs using the **NexT** theme, provides image carousel a
     ```yaml
     # Image carousel and zoom
     splide:
-    cdn: unpkg  # Options: unpkg, cdnjs, jsdelivr
-    options:
-        heightRatio: 0.618        # Aspect ratio
-        lazyLoad: 'nearby'        # Lazy loading, options: false, 'nearby', 'sequential'
-        type: 'slide'             # Type, options: 'loop', 'slide'
-        autoplay: false           # Autoplay
-        interval: 3000            # Autoplay interval in milliseconds
-        pauseOnHover: true        # Pause autoplay when hovering
+        cdn: unpkg  # Options: unpkg, cdnjs, jsdelivr
+        options:
+            heightRatio: 0.618        # Aspect ratio
+            lazyLoad: 'nearby'        # Lazy loading, options: false, 'nearby', 'sequential'
+            type: 'slide'             # Type, options: 'loop', 'slide'
+            autoplay: false           # Autoplay
+            interval: 3000            # Autoplay interval in milliseconds
+            pauseOnHover: true        # Pause autoplay when hovering
 
-    styles:
-        arrowColor: '#fc8d5d'             # Arrow color for navigation buttons
-        arrowHoverColor: '#fc6423'        # Arrow color on hover
-        paginationColor: '#fc8d5d'        # Pagination button color when inactive
-        paginationActiveColor: '#fc6423'  # Pagination button color when active
-        paginationHoverColor: '#fc6423'   # Pagination button color on hover
-        borderRadius: 1px                 # Border radius
-        borderColor:
-        light: "#eee"  # Border color for light theme
-        dark: "#444"   # Border color for dark theme
-        shadowColor:
-        light: "rgba(0, 0, 0, 0.1)"  # Shadow color for light theme
-        dark: "rgba(0, 0, 0, 0.3)"   # Shadow color for dark theme
+        styles:
+            arrowColor: '#fc8d5d'             # Arrow color for navigation buttons
+            arrowHoverColor: '#fc6423'        # Arrow color on hover
+            paginationColor: '#fc8d5d'        # Pagination button color when inactive
+            paginationActiveColor: '#fc6423'  # Pagination button color when active
+            paginationHoverColor: '#fc6423'   # Pagination button color on hover
+            borderRadius: 1px                 # Border radius
+            borderColor:
+            light: "#eee"  # Border color for light theme
+            dark: "#444"   # Border color for dark theme
+            shadowColor:
+            light: "rgba(0, 0, 0, 0.1)"  # Shadow color for light theme
+            dark: "rgba(0, 0, 0, 0.3)"   # Shadow color for dark theme
 
-    dark_mode: auto  # Dark mode, options: auto, true, false. auto will follow the theme of the browser.
-    enable_medium_zoom: true  # Enable medium zoom, do not enable together with the theme's medium zoom option
+        dark_mode: auto  # Dark mode, options: auto, true, false. auto will follow the theme of the browser.
+        enable_medium_zoom: true  # Enable medium zoom, do not enable together with the theme's medium zoom option
     ```
 
 ## Usage
@@ -72,11 +75,16 @@ To create image carousels using **Splide.js**, wrap your images inside the `{% s
 ### medium-zoom
 - The `medium_zoom.enabled` option in the `_config.yml` file allows you to control whether to use the medium-zoom library.
 - The zoom function is always available whether the image is wrapped in the `{% splide %}` tag or not.
-- Please do not enable medium-zoom or fancybox function in `_config.next.yml` at the same time.
+- Please do not enable medium-zoom or fancybox function in your theme's config file at the same time.
 
 ## Dependency
 - [Splide @4.1.4](https://github.com/Splidejs/splide)
 - [medium-zoom @1.1.0](https://github.com/francoischalifour/medium-zoom)
+
+## Known Issues
+- When medium-zoom is enabled, there is a chance that some images may not zoom correctly. For more details, see [images in a row with hardcoded height, look bad when zoomed in #147](https://github.com/francoischalifour/medium-zoom/issues/147).
+- Currently, the carousel component’s dark and light themes are adjusted based on the browser’s theme settings. It does not support some themes' built-in light/dark toggle features, as each theme handles dark mode differently, making it impossible to accommodate every theme.
+- The NexT and Butterfly themes have been tested and work as expected. Other themes are not guaranteed to function properly. Additionally, due to my limited front-end knowledge, the carousel component is fully compatible only with the NexT theme.
 
 ## License
 This project is licensed under the MIT License.
