@@ -101,7 +101,7 @@ splide:
 ## 已知问题
 - 启用 medium-zoom 时，有概率导致某些图片无法被正确放大。详情见 [images in a row with hardcoded height, look bad when zoomed in #147](https://github.com/francoischalifour/medium-zoom/issues/147)。
 - 目前轮播组件的深色模式是根据浏览器的明暗主题调整的，不支持一些主题自带的明暗主题切换功能，因为每个主题对深色模式的处理方式不同，不可能为每个主题都做适配。
-- 目前已经测试过 NexT 主题和 Butterfly 主题，可以正常使用，其他主题不保证能够正常使用。另外，碍于本人有限的前端知识，轮播组件只对 NexT 主题有完整适配。
+- 目前已经测试过 NexT 主题和 Butterfly 主题，可以正常使用，其他主题不保证能够正常使用。另外，碍于本人有限的前端知识，轮播组件只对 NexT 主题有适配。
 - 尺寸小于轮播窗口的图片将会被放大至填满轮播窗口。
 
 ## 许可证
