@@ -1,7 +1,7 @@
 # hexo-splide-carousel
 <p align="center">
-    <a href="https://github.com/Siriusq/hexo-splide-carousel/blob/master/ReadmeAssets/CNREADME.md"><img src="https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87_CN_README-4285F4?style=for-the-badge&logo=googletranslate&logoColor=ffffff"/></a>
-    <a href="https://siriusq.top/en/splide-demo.html"><img src="https://img.shields.io/badge/Live%20Demo-%23fac03d?style=for-the-badge&logo=github&logoColor=%23222222"/></a>
+    <a href="https://github.com/Siriusq/hexo-splide-carousel/blob/master/README.md"><img src="https://img.shields.io/badge/ENGLISH_README-4285F4?style=for-the-badge&logo=googletranslate&logoColor=ffffff"/></a>
+    <a href="https://siriusq.top/splide-demo.html"><img src="https://img.shields.io/badge/Live%20Demo-%23fac03d?style=for-the-badge&logo=github&logoColor=%23222222"/></a>
     <a href="https://github.com/Siriusq/hexo-splide-carousel/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-%23e3eb98?style=for-the-badge"/></a>
     <a href="https://hexo.io/"><img src="https://img.shields.io/badge/HEXO-7.3.0-%230E83CD?style=for-the-badge&logo=hexo"/></a>
     <a href="https://www.npmjs.com/"><img src="https://img.shields.io/badge/NPM-10.8.2-%23CB3837?style=for-the-badge&logo=npm&logoColor=%23CB3837"/></a>
@@ -67,17 +67,26 @@ To create image carousels using **Splide.js**, wrap your images inside the `{% s
 
 ## Configuration
 ### Splide
-[More splide options](https://splidejs.com/guides/options/#options) can be added to options section in the `_config.yml`, but they are not guaranteed to work properly. 
+In the `options` section of `_config.yml`, you can define global default settings for Splide. These settings will apply to all carousels. You can add more [Splide options](https://splidejs.com/guides/options/#options) here, but not all options are guaranteed to work properly.
 ```yaml
- splide:
-    options:
-        heightRatio: 0.618        # Aspect ratio
-        lazyLoad: 'nearby'        # Lazy loading, options: false, 'nearby', 'sequential'
-        type: 'slide'             # Type, options: 'loop', 'slide'
-        autoplay: false           # Autoplay
-        interval: 3000            # Autoplay interval in milliseconds
-        pauseOnHover: true        # Pause autoplay when hovering
-        # More splide options can be added here.
+splide:
+  options:
+    heightRatio: 0.618        # Aspect ratio
+    lazyLoad: 'nearby'        # Lazy loading, options: false, 'nearby', 'sequential'
+    type: 'slide'             # Type, options: 'loop', 'slide'
+    autoplay: false           # Autoplay
+    interval: 3000            # Autoplay interval in milliseconds
+    pauseOnHover: true        # Pause autoplay when hovering
+    # More Splide options can be added here
+```
+
+You can also add local settings directly inside the `{% splide %}` tag in the markdown file. Separate the options with spaces. Local settings will only apply to the specific carousel defined by the tag, and they will override the global default settings. For example, the following configuration enables looping and autoplay for the current carousel:
+```
+{% splide type:'loop' autoplay:true %}
+![Caption 1](xxx.png)
+![Caption 2](xxx.png)
+![Caption 3](xxx.png)
+{% endsplide %}
 ```
 
 ### medium-zoom

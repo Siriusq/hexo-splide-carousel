@@ -67,17 +67,26 @@
 
 ## 配置
 ### Splide
-可以在 `_config.yml` 中的 `options` 部分添加更多的 [Splide 选项](https://splidejs.com/guides/options/#options)，但不保证所有选项都能正常工作。
+在`_config.yml` 中的 `options` 部分是 Splide 的全局默认设置，此处设置的选项会应用于所有的轮播组件。你可以在这里添加更多的 [Splide 选项](https://splidejs.com/guides/options/#options)，但不保证所有选项都能正常工作。
 ```yaml
 splide:
-    options:
-        heightRatio: 0.618        #宽高比
-        lazyLoad: 'nearby'        #懒加载，可选项：false, 'nearby', 'sequential'
-        type: 'slide'             #类型，可选项：'loop', 'slide'
-        autoplay: false           #自动播放
-        interval: 3000            #自动播放时间间隔
-        pauseOnHover: true        #鼠标悬停时暂停自动播放
-        # 更多的 Splide 选项可以在这里添加
+  options:
+    heightRatio: 0.618        #宽高比
+    lazyLoad: 'nearby'        #懒加载，可选项：false, 'nearby', 'sequential'
+    type: 'slide'             #类型，可选项：'loop', 'slide'
+    autoplay: false           #自动播放
+    interval: 3000            #自动播放时间间隔
+    pauseOnHover: true        #鼠标悬停时暂停自动播放
+    # 更多的 Splide 选项可以在这里添加
+```
+
+你还可以在 markdown 文件的`{% splide %}` 标签中添加局部设置选项，选项间使用空格分隔，局部设置项仅对标签对应的轮播组件生效，优先级高于全局默认设置。例如下面的配置就会为当前轮播组件开启循环和自动播放：
+```
+{% splide type:'loop' autoplay:true %}
+![简介1](xxx.png)
+![简介2](xxx.png)
+![简介3](xxx.png)
+{% endsplide %}
 ```
 
 ### medium-zoom
