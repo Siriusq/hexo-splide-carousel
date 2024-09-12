@@ -1,6 +1,6 @@
 {
   "name": "hexo-splide-carousel",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A package for Hexo blogs using the Next theme, provides image carousel and zoom functionality using Splide and medium-zoom libraries.",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   ],
   "author": "Siriusq",
   "homepage": "https://github.com/Siriusq/hexo-splide-carousel",
-  "bugs": "https://github.com/Siriusq/hexo-splide-carousel/issues", 
+  "bugs": "https://github.com/Siriusq/hexo-splide-carousel/issues",
   "repository": {
     "type": "git",
     "url": "git://github.com:Siriusq/hexo-splide-carousel.git"
