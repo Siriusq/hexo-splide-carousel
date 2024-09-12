@@ -56,7 +56,7 @@
    ```
 
 ## 使用
-要创建图片轮播，请将图片包裹在 `{% splide %}` 标签中，例如：
+要创建图片轮播，请将图片包裹在 `{% splide %}` 或者 `{% sc %}` 标签中，例如：
 ```
 {% splide %}
 ![简介1](xxx.png)
@@ -64,6 +64,15 @@
 ![简介3](xxx.png)
 {% endsplide %}
 ```
+以及
+```
+{% sc %}
+![简介1](xxx.png)
+![简介2](xxx.png)
+![简介3](xxx.png)
+{% endsc %}
+```
+更多使用方法请访问[Hexo Splide Carousel 在线演示](https://siriusq.top/splide-demo.html)
 
 ## 配置
 ### Splide

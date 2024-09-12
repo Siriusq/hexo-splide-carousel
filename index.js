@@ -1,10 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 
-// 注册 Hexo 自定义标签
+// 注册 Hexo 自定义标签及其简写
+const splideTag = require('./lib/scripts/tags/splide-tag')(hexo);
 hexo.extend.tag.register(
   "splide",
-  require('./lib/scripts/tags/splide-tag')(hexo),
+  splideTag,
+  { ends: true },
+);
+
+hexo.extend.tag.register(
+  "sc",
+  splideTag,
   { ends: true },
 );
 

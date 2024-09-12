@@ -56,7 +56,7 @@ A package for **Hexo** blogs using the **NexT** theme, provides image carousel a
    ```
 
 ## Usage
-To create image carousels using **Splide.js**, wrap your images inside the `{% splide %}` tags, e.g.:
+To create image carousels using **Splide.js**, wrap your images inside the `{% splide %}` or `{% sc %}` tags, e.g.:
 ```
 {% splide %}
 ![alt1](xxx.png)
@@ -64,6 +64,15 @@ To create image carousels using **Splide.js**, wrap your images inside the `{% s
 ![alt3](xxx.png)
 {% endsplide %}
 ```
+or
+```
+{% sc %}
+![alt1](xxx.png)
+![alt2](xxx.png)
+![alt3](xxx.png)
+{% endsc %}
+```
+For more usage instructions, please visit [Hexo Splide Carousel Live Demo](https://theme-next.js.org/docs/tag-plugins/group-pictures).
 
 ## Configuration
 ### Splide
