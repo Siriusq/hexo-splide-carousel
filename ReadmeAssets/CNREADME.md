@@ -16,8 +16,8 @@
 - 集成 [medium-zoom](https://medium-zoom.francoischalifour.com/) 库，实现图片平滑且简洁的缩放效果。
 - 提供多种自定义样式选项，支持深色模式。
 - 更多 Splide 选项可以添加到配置文件中，但不能保证所有选项都能正常工作。
-- 兼容 NexT 主题的 lazyload 和 pjax 功能。
-- 轮播组件初始化时会占据固定的高度，所以不用担心开启主题的懒加载后，点击目录时跳转的位置不准确。
+- 兼容 NexT 主题的 pjax 功能。
+- 轮播组件初始化时会占据固定的高度，开启 NexT 主题的懒加载后，点击目录跳转位置准确。
 
 ## 安装
 1. 通过 npm 安装：
@@ -31,7 +31,7 @@
      cdn: unpkg  # 可选项：unpkg, cdnjs, jsdelivr
      options:
        heightRatio: 0.618        # 宽高比
-       lazyLoad: 'nearby'        # 懒加载，可选项：false, 'nearby', 'sequential'
+       lazyLoad: false           # 懒加载，可选项：false, 'nearby', 'sequential'
        type: 'slide'             # 类型，可选项：'loop', 'slide'
        autoplay: false           # 自动播放
        interval: 3000            # 自动播放时间间隔
@@ -52,7 +52,7 @@
          dark: "rgba(0, 0, 0, 0.3)"   # 深色主题阴影颜色
 
      dark_mode: auto  # 深色模式，可选项：true, false, auto. auto 模式会根据浏览器主题自动设置
-     enable_medium_zoom: true  # 是否启用 medium zoom，请不要与主题中的 medium zoom 同时启用
+     enable_medium_zoom: false  # 是否启用 medium zoom，请不要与主题中的 medium zoom 同时启用
    ```
 
 ## 使用
@@ -81,7 +81,7 @@
 splide:
   options:
     heightRatio: 0.618        #宽高比
-    lazyLoad: 'nearby'        #懒加载，可选项：false, 'nearby', 'sequential'
+    lazyLoad: false           #懒加载，可选项：false, 'nearby', 'sequential'
     type: 'slide'             #类型，可选项：'loop', 'slide'
     autoplay: false           #自动播放
     interval: 3000            #自动播放时间间隔
@@ -110,8 +110,12 @@ splide:
 ## 已知问题
 - 启用 medium-zoom 时，有概率导致某些图片无法被正确放大。详情见 [images in a row with hardcoded height, look bad when zoomed in #147](https://github.com/francoischalifour/medium-zoom/issues/147)。
 - 目前轮播组件的深色模式是根据浏览器的明暗主题调整的，不支持一些主题自带的明暗主题切换功能，因为每个主题对深色模式的处理方式不同，不可能为每个主题都做适配。
-- 目前已经测试过 NexT 主题和 Butterfly 主题，可以正常使用，其他主题不保证能够正常使用。另外，碍于本人有限的前端知识，轮播组件只对 NexT 主题有适配。
+- 目前已经测试过 NexT 主题和 Butterfly 主题，可以使用，其他主题不保证能够正常使用。另外，碍于本人有限的前端知识，轮播组件只对 NexT 主题有相应适配。
 - 尺寸小于轮播窗口的图片将会被放大至填满轮播窗口。
+- 请勿启用主题内置的 medium-zoom 功能，它会导致轮播组件内的图片在缩放时比例失调。如有图片缩放需要，请使用包中经过适配的 medium-zoom 或者主题提供的 fancybox。
+- Splide 提供的 lazyload 功能与主题提供的 fancybox 存在冲突，两者同时开启时 fancybox 无法获取图片路径，如果要使用 fancybox，请将 Splide 的 lazyLoad 设置为 false。
+- 不兼容 Butterfly 主题内置的 lazyload 功能。
+- Splide 的 lazyload 功能开启时会固定加载轮播中的首张图片，无论是否启用 NexT 主题中的 lazyload。 
 
 ## 许可证
 本项目采用 MIT 许可证。

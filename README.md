@@ -16,8 +16,8 @@ A package for **Hexo** blogs using the **NexT** theme, provides image carousel a
 - Provides [medium-zoom](https://medium-zoom.francoischalifour.com/) functionality for zooming images with a smooth and clean effect.
 - Provides a variety of custom style options, support dark mode settings.
 - More splide options can be added to the configuration file, but they are not guaranteed to work properly.
-- Compatible with theme NexT's lazyload and pjax functions.
-- Since the carousel component occupies a fixed height upon initialization, there's no need to worry about inaccurate scrolling positions when clicking the table of contents after enabling the theme's lazy loading.
+- Compatible with theme NexT's pjax functions.
+- The carousel component will occupy a fixed height. When NexT theme's lazyload function is enabled, clicking on the TOC will jump to the position accurately.
 
 ## Installation
 1. Install the package via npm:
@@ -31,7 +31,7 @@ A package for **Hexo** blogs using the **NexT** theme, provides image carousel a
      cdn: unpkg  # Options: unpkg, cdnjs, jsdelivr
      options:
        heightRatio: 0.618        # Aspect ratio
-       lazyLoad: 'nearby'        # Lazy loading, options: false,
+       lazyLoad: false           # Lazy loading, options: false, 'nearby', 'sequential'
        type: 'slide'             # Type, options: 'loop', 'slide'
        autoplay: false           # Autoplay
        interval: 3000            # Autoplay interval in milliseconds
@@ -52,7 +52,7 @@ A package for **Hexo** blogs using the **NexT** theme, provides image carousel a
          dark: "rgba(0, 0, 0, 0.3)"   # Shadow color for dark theme
 
      dark_mode: auto  # Dark mode, options: auto, true, false. auto will follow the theme of the browser.
-     enable_medium_zoom: true  # Enable medium zoom, do not enable together with the theme's medium zoom option
+     enable_medium_zoom: false  # Enable medium zoom, do not enable together with the theme's medium zoom option
    ```
 
 ## Usage
@@ -81,7 +81,7 @@ In the `options` section of `_config.yml`, you can define global default setting
 splide:
   options:
     heightRatio: 0.618        # Aspect ratio
-    lazyLoad: 'nearby'        # Lazy loading, options: false, 'nearby', 'sequential'
+    lazyLoad: false           # Lazy loading, options: false, 'nearby', 'sequential'
     type: 'slide'             # Type, options: 'loop', 'slide'
     autoplay: false           # Autoplay
     interval: 3000            # Autoplay interval in milliseconds
@@ -112,6 +112,10 @@ You can also add local settings directly inside the `{% splide %}` tag in the ma
 - Currently, the carousel component’s dark and light themes are adjusted based on the browser’s theme settings. It does not support some themes' built-in light/dark toggle features, as each theme handles dark mode differently, making it impossible to accommodate every theme.
 - The NexT and Butterfly themes have been tested and work as expected. Other themes are not guaranteed to function properly. Additionally, due to my limited front-end knowledge, the carousel component is fully compatible only with the NexT theme.
 - Images smaller than the carousel container will be enlarged to fill the carousel container.
+- Do not enable the theme's built-in medium-zoom feature, as it may cause image aspect ratios to be distorted within the carousel during zoom. If you need image zoom functionality, please use the medium-zoom adapted in this package or the fancybox provided by the theme.
+- The lazyload feature provided by Splide conflicts with the theme's fancybox. When both are enabled, fancybox cannot retrieve the image path. If you need to use fancybox, please set Splide's lazyLoad to false.
+- It is not compatible with the lazyload feature built into the Butterfly theme.
+- When Splide's lazyload feature is enabled, the first image in the carousel will always be loaded, regardless of whether the NexT theme's lazyload is enabled.
 
 ## License
 This project is licensed under the MIT License.
