@@ -5,7 +5,7 @@
     /* 阴影 */
     box-shadow: 0px 4px 8px var(--carousel-shadow-color);
     /* 圆角 */
-    border-radius: var(--carousel-border-radius);    
+    border-radius: var(--carousel-border-radius);
 }
 
 /* 确保图片的显示与适配 */
@@ -13,7 +13,7 @@
     width: 100%;
     height: 100%;
     /* 确保图片全部显示且占满组件 */
-    object-fit: contain;    
+    object-fit: contain;
 }
 
 .carousel-container {
@@ -21,14 +21,14 @@
     /* 调整与上方元素的距离 */
     margin-top: 20px;
     /* 调整与下方元素的距离 */
-    margin-bottom: 20px;    
+    margin-bottom: 20px;
 }
 
 /* 图片简介 */
 .carousel-caption {
     min-height: 2em;
     /* 设置行高，让文字垂直居中 */
-    line-height: 2em;    
+    line-height: 2em;
     text-align: center;
     font-size: 0.9em;
     font-style: italic;
@@ -62,6 +62,7 @@
 .splide__arrow--prev {
     left: 0;
 }
+
 .splide__arrow--next {
     right: 0;
 }
@@ -69,7 +70,7 @@
 /* 切换按钮中的箭头图标 */
 .splide__arrow svg {
     /* 动态设置箭头颜色 */
-    fill: var(--carousel-arrow-color);    
+    fill: var(--carousel-arrow-color);
     height: 2.5em;
     transition: fill 0.2s linear;
     width: 2.5em;
@@ -85,14 +86,17 @@
     outline: transparent;
     outline-offset: 0;
 }
+
 .splide.is-focus-in .splide__arrow:focus {
     outline: transparent;
     outline-offset: 0;
 }
+
 .splide__pagination__page:focus-visible {
     outline: transparent;
     outline-offset: 0;
 }
+
 .splide.is-focus-in .splide__pagination__page:focus {
     outline: transparent;
     outline-offset: 0;
@@ -119,13 +123,34 @@
     width: 20px;
     transition: background-color 0.2s linear;
 }
+
 .splide__pagination__page.is-active {
     background: var(--carousel-pagination-active-color);
 }
+
 .splide__pagination__page:hover {
     background: var(--carousel-pagination-hover-color);
     cursor: pointer;
     opacity: 0.9;
+}
+
+/* 使用伪元素增加点击区域 */
+.splide__pagination__page::before {
+    content: '';
+    position: absolute;
+    top: -18px;
+    bottom: -18px;
+    left: -4px;
+    right: -4px;
+}
+
+.splide__pagination__page.is-active::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    bottom: -12px;
+    left: -1px;
+    right: -1px;
 }
 
 /* 在放大时按比例缩放，配合 JS 进行调整 */
