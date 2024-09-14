@@ -101,7 +101,7 @@ splide:
 ### medium-zoom
 - `_config.yml` 中的 `medium_zoom.enabled` 选项可以控制是否使用 medium-zoom 缩放功能。
 - 无论图片是否包裹在 `{% splide %}` 标签内，缩放功能始终可用。
-- 请不要同时启用主题自带的 medium-zoom 或 fancybox 功能。
+- 此项开启时，请不要同时启用主题自带的 medium-zoom 或 fancybox 功能。
 
 ## 依赖
 - [Splide @4.1.4](https://github.com/Splidejs/splide)
@@ -116,6 +116,20 @@ splide:
 - Splide 提供的 lazyload 功能与主题提供的 fancybox 存在冲突，两者同时开启时 fancybox 无法获取图片路径，如果要使用 fancybox，请将 Splide 的 lazyLoad 设置为 false。
 - 不兼容 Butterfly 主题内置的 lazyload 功能。
 - Splide 的 lazyload 功能开启时会固定加载轮播中的首张图片，无论是否启用 NexT 主题中的 lazyload。 
+- 为解决冲突问题，在含有轮播组件的页面中，fancybox 的 `placeFocusBack` 功能会被禁用，即关闭 fancybox 的缩放窗口后，页面不会跳转至关闭前显示的图片所在的位置。
+
+## 版本更新日志
+
+### 1.1.0
+- 新增在 markdown 文件中使用的轮播标签 `{% sc %}`。
+
+### 1.2.0
+- 调整了 Splide 的懒加载功能，以兼容 NexT 主题内置的 fancybox 缩放功能。
+
+### 1.2.1
+- 解决了 fancybox 的 `placeFocusBack` 功能造成的轮播组件分页混乱问题。
+- 修复了 fancybox 将 splide 为循环轮播组件创建的克隆图片添加到组件中的问题。
+- 增大了分页按钮的可点击区域。
 
 ## 许可证
 本项目采用 MIT 许可证。

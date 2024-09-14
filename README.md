@@ -101,7 +101,7 @@ You can also add local settings directly inside the `{% splide %}` tag in the ma
 ### medium-zoom
 - The `medium_zoom.enabled` option in the `_config.yml` file allows you to control whether to use the medium-zoom library.
 - The zoom function is always available whether the image is wrapped in the `{% splide %}` tag or not.
-- Please do not enable medium-zoom or fancybox function in your theme's config file at the same time.
+- Please do not enable medium-zoom or fancybox function in your theme's config file at the same time when enable this.
 
 ## Dependency
 - [Splide @4.1.4](https://github.com/Splidejs/splide)
@@ -116,6 +116,20 @@ You can also add local settings directly inside the `{% splide %}` tag in the ma
 - The lazyload feature provided by Splide conflicts with the theme's fancybox. When both are enabled, fancybox cannot retrieve the image path. If you need to use fancybox, please set Splide's lazyLoad to false.
 - It is not compatible with the lazyload feature built into the Butterfly theme.
 - When Splide's lazyload feature is enabled, the first image in the carousel will always be loaded, regardless of whether the NexT theme's lazyload is enabled.
+- "To resolve conflicts, the placeFocusBack feature of Fancybox is disabled on pages containing carousel components, meaning that after closing the Fancybox zoom window, the page will not jump to the position of the image that was displayed before closing."
+
+## Version Update Log
+
+### 1.1.0
+- Added a carousel tag `{% sc %}` for use in markdown files.
+
+### 1.2.0
+- Adjusted Splide's lazy load feature to be compatible with the NexT theme's built-in Fancybox zoom functionality.
+
+### 1.2.1
+- Resolved the issue where Fancybox's `placeFocusBack` feature caused pagination confusion in carousel components.
+- Fixed the problem where Fancybox added cloned images created by Splide for looped carousel components.
+- Increased the clickable area of pagination buttons.
 
 ## License
 This project is licensed under the MIT License.
